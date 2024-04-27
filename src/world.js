@@ -17,11 +17,9 @@ export class World {
 		for(let i = 0; i < this.bodies.length; i++) {
 			let body = this.bodies[i];
 			
-			let force = body.force;
 			let mass = body.mass;
-			console.log(body)
-			force.x += mass * this.gravity.x;
-			force.y += mass * this.gravity.y;
+			body.setForce(this.gravity, mass);
+			console.log(body.force)
 			
 		}
 	}

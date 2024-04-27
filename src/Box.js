@@ -4,7 +4,7 @@ import {Vec2} from './vec2.js'
 
 export class Box extends PhysicsBody {
 	
-	force = 0;
+	
 	constructor(pos, mass=1) {
 		super(pos)
 		this.mass = mass;

@@ -9,6 +9,7 @@ export class PhysicsBody {
 		this.pos = pos;
 		this.vel = new Vec2(0,0);
 		this.acc = new Vec2(0,0);
+		this.force = new Vec2(0,0);
 	}
 	
 	
@@ -17,7 +18,7 @@ export class PhysicsBody {
 	* Gets the bodys current position
 	* @return {Vec2} - position
 	*/
-	get position() {
+	getPos() {
 		return this.pos;
 	}
 	
@@ -25,7 +26,7 @@ export class PhysicsBody {
 	* Sets the body's position
 	* @param {Vec2} - position vector
 	*/
-	set position(vec2) {
+	setPos(vec2) {
 		this.pos.x = vec2.x;
 		this.pos.y = vec2.y;
 	}
@@ -34,7 +35,7 @@ export class PhysicsBody {
 	* Gets the bodys current velocity
 	* @return {Vec2} - velocity
 	*/
-	get velocity() {
+	getVel() {
 		return this.vel;
 	}
 	
@@ -42,7 +43,7 @@ export class PhysicsBody {
 	* Sets the body's velocity
 	* @param {Vec2} - velocity vector
 	*/
-	set velocity(vec2) {
+	setVel(vec2) {
 		this.vel.x = vec2.x;
 		this.vel.y = vec2.y;
 	}
@@ -51,7 +52,7 @@ export class PhysicsBody {
 	* Gets the bodys current acceleration
 	* @return {Vec2} - acceleration
 	*/
-	get acceleration() {
+	getAcc() {
 		return this.acc;
 	}
 	
@@ -59,9 +60,28 @@ export class PhysicsBody {
 	* Sets the body's acceleration
 	* @param {Vec2} - acceleration vector
 	*/
-	set acceleration(vec2) {
+	setAcc(vec2) {
 		this.acc.x = vec2.x;
 		this.acc.y = vec2.y;
+	}
+
+	/**
+	* Gets the bodys current force
+	* @return {Vec2} - force Vector
+	*/
+	getForce() {
+		return this.force;
+	}
+	
+	/**
+	* Sets the body's force
+	* @param {Vec2} - vector
+	* @param {number} - body's mass
+	*/
+	setForce(vec2, mass) {
+
+		this.force.x += vec2.x * mass;
+		this.force.y += vec2.y * mass;
 	}
 	
 }
