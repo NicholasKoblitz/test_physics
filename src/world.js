@@ -19,10 +19,10 @@ export class World {
 			
 			let force = body.force;
 			let mass = body.mass;
-			
+			console.log(body)
 			force.x += mass * this.gravity.x;
 			force.y += mass * this.gravity.y;
-			console.log(force)
+			
 		}
 	}
 }
