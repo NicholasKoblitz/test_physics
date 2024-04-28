@@ -8,6 +8,7 @@ export class Box extends PhysicsBody {
 	constructor(pos, mass=1) {
 		super(pos)
 		this.mass = mass;
+		this.force = new Vec2(0,0);
 		this.vertexs = [];
 		this.updateVertexes();
 	}
@@ -24,4 +25,6 @@ export class Box extends PhysicsBody {
 		];
 		this.vertexs = vex;
 	}
+
+	
 }

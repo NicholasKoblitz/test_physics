@@ -9,7 +9,6 @@ export class PhysicsBody {
 		this.pos = pos;
 		this.vel = new Vec2(0,0);
 		this.acc = new Vec2(0,0);
-		this.force = new Vec2(0,0);
 	}
 	
 	
@@ -80,8 +79,9 @@ export class PhysicsBody {
 	*/
 	setForce(vec2, mass) {
 
-		this.force.x += vec2.x * mass;
-		this.force.y += vec2.y * mass;
+		this.force.x += vec2.x + mass;
+		this.force.y += vec2.y * mass
 	}
+	
 	
 }

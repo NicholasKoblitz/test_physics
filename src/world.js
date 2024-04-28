@@ -1,7 +1,7 @@
 import {Vec2} from'./vec2.js'
 
 export class World {
-	constructor(gravity=new Vec2(0,0), dt=1/60) {
+	constructor(gravity=new Vec2(0,-9.81), dt=1/60) {
 		this.gravity = gravity;
 		this.dt = dt
 		this.bodies = [];
@@ -19,7 +19,7 @@ export class World {
 			
 			let mass = body.mass;
 			body.setForce(this.gravity, mass);
-			console.log(body.force)
+
 			
 		}
 	}

@@ -1,9 +1,9 @@
-import * as THREE from 'three';
+// import * as THREE from 'three';
 import {Vec2} from './src/vec2.js';
 import {Box} from './src/Box.js'
 import {World} from './src/world.js'
 
-const scene = new THREE.Scene();
+/*const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer();
@@ -23,6 +23,7 @@ function animate() {
 	renderer.render( scene, camera );
 }
 animate();
+*/
 
 let w = new World();
 let v = new Vec2(1,1)
@@ -31,3 +32,5 @@ let b = new Box(v)
 w.addBody(b)
 
 w.fixedStep()
+
+console.log(b)
